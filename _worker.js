@@ -7,15 +7,33 @@ let ChatID =''; //可以为空，或者@userinfobot中获取，/start
 let TG = 0; //小白勿动， 开发者专用，1 为推送所有的访问信息，0 为不推送订阅转换后端的访问信息与异常访问
 let FileName = 'CF-Workers-SUB';
 let SUBUpdateTime = 6; //自定义订阅更新时间，单位小时
-let total = 99;//TB
 let timestamp = 4102329600000;//2099-12-31
 
 let cacheTTL = 24 ;//小时，缓存时长
 
 //节点链接 + 订阅链接
 let MainData = `
-vless://b7a392e2-4ef0-4496-90bc-1c37bb234904@cf.090227.xyz:443?encryption=none&security=tls&sni=edgetunnel-2z2.pages.dev&fp=random&type=ws&host=edgetunnel-2z2.pages.dev&path=%2F%3Fed%3D2048#%E5%8A%A0%E5%85%A5%E6%88%91%E7%9A%84%E9%A2%91%E9%81%93t.me%2FCMLiussss%E8%A7%A3%E9%94%81%E6%9B%B4%E5%A4%9A%E4%BC%98%E9%80%89%E8%8A%82%E7%82%B9
-https://sub.xf.free.hr/auto
+trojan://trojan@47.243.198.198:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@162.159.152.143:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@162.159.135.156:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@162.159.138.93:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@132.145.127.203:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@104.19.6.95:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@104.19.23.130:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@104.19.108.184:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@130.61.203.115:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@193.123.61.142:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@130.61.107.238:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@132.145.54.84:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@150.230.44.131:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@143.47.243.144:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@138.2.36.157:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@141.147.47.32:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@152.70.123.225:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@141.147.61.116:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@162.159.137.153:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@162.159.140.117:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
+trojan://trojan@141.147.92.143:8443?path=%2F%3Fed%3D2560&security=tls&host=tro.123456123.dynv6.net&fp=randomized&type=ws&sni=tro.123456123.dynv6.net#ZSFan-%E7%A6%81%E6%AD%A2%E6%B5%8B%E9%80%9F
 `
 
 let urls = [];
